@@ -117,21 +117,7 @@ namespace Player
             FillReport((int?)cmbReportStock.SelectedValue);
         }
 
-        private void btnSaveImport_Click(object sender, EventArgs e)
-        {
-            int itemInStockID = (int)ImportGridView.SelectedRows[0].Cells[0].Value;
-            ItemInStockServices.EditItemInStock(itemInStockID, (int)quantityOfImportItems.Value, dateOfImport.Value);
-            ImportGridView.DataSource = ItemInStockServices.GetAllItemInStock((int?)cmbImportStock.SelectedValue, tabPage1.Text);
-            FillReport((int?)cmbReportStock.SelectedValue);
-        }
-
-        private void btnDeleteImport_Click(object sender, EventArgs e)
-        {
-            int iteminstockid = (int)ImportGridView.SelectedRows[0].Cells[0].Value;
-            ItemInStockServices.DeleteItemInStock(iteminstockid);
-            ImportGridView.DataSource = ItemInStockServices.GetAllItemInStock((int?)cmbImportStock.SelectedValue, tabPage1.Text);
-
-        }
+  
 
         private void ImportGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -205,32 +191,11 @@ namespace Player
                     );
                 ExportGridView.DataSource = ItemInStockServices.GetAllItemInStock((int?)cmbExportStock.SelectedValue, tabPage2.Text);
                 FillReport((int?)cmbReportStock.SelectedValue);
+                currentQuantity.Value = ItemServices.GetQuantity((int?)cmbExportItem.SelectedValue, (int?)cmbExportStock.SelectedValue);
             }
         }
 
-        private void btnExportSave_Click(object sender, EventArgs e)
-        {
-            if ((int)quantity.Value > (int)currentQuantity.Value)
-            {
-                MessageBox.Show("This Quantity Is Not Available Right Now", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                int iteminstockid = (int)ExportGridView.SelectedRows[0].Cells[0].Value;
-                int qunatity = (int)quantity.Value;
-                DateTime date = dateOfExport.Value;
-                ItemInStockServices.EditItemInStock(iteminstockid, qunatity, date);
-                ExportGridView.DataSource = ItemInStockServices.GetAllItemInStock((int?)cmbExportStock.SelectedValue, tabPage2.Text);
-                FillReport((int?)cmbReportStock.SelectedValue);
-            }
-        }
-
-        private void btnExportDelete_Click(object sender, EventArgs e)
-        {
-            int iteminstockid = (int)ExportGridView.SelectedRows[0].Cells[0].Value;
-            ItemInStockServices.DeleteItemInStock(iteminstockid);
-            ExportGridView.DataSource = ItemInStockServices.GetAllItemInStock((int?)cmbExportStock.SelectedValue, tabPage2.Text);
-        }
+     
 
         private void ExportGridView_SelectionChanged(object sender, EventArgs e)
         {
