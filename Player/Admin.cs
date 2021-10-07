@@ -24,8 +24,6 @@ namespace Player
             CategoryServices = new CategoryServices();
             ItemServices = new ItemServices();
             FillComponents();
-
-
         }
         void FillComponents()
         {
