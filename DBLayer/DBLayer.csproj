@@ -55,9 +55,9 @@
     <Compile Include="Context.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemInStock.cs" />
-    <Compile Include="Migrations\202110050328334_up.cs" />
-    <Compile Include="Migrations\202110050328334_up.designer.cs">
-      <DependentUpon>202110050328334_up.cs</DependentUpon>
+    <Compile Include="Migrations\202110072134326_create.cs" />
+    <Compile Include="Migrations\202110072134326_create.designer.cs">
+      <DependentUpon>202110072134326_create.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Stock.cs" />
@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202110050328334_up.resx">
-      <DependentUpon>202110050328334_up.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110072134326_create.resx">
+      <DependentUpon>202110072134326_create.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

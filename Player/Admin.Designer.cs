@@ -41,15 +41,11 @@ namespace Player
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.StockGridView = new System.Windows.Forms.DataGridView();
-            this.btnDeleteStock = new System.Windows.Forms.Button();
-            this.btnSaveStock = new System.Windows.Forms.Button();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.labelStockName = new System.Windows.Forms.Label();
             this.txtStockName = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CategoryGridView = new System.Windows.Forms.DataGridView();
-            this.btnDeleteCategory = new System.Windows.Forms.Button();
-            this.btnSaveCategory = new System.Windows.Forms.Button();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.labelCategoryName = new System.Windows.Forms.Label();
             this.txtNameCategory = new System.Windows.Forms.TextBox();
@@ -58,8 +54,6 @@ namespace Player
             this.btnImportExportForm = new System.Windows.Forms.Button();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.labelItemCategory = new System.Windows.Forms.Label();
-            this.btnDeleteItem = new System.Windows.Forms.Button();
-            this.btnSaveItem = new System.Windows.Forms.Button();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.labelItemName = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
@@ -89,8 +83,6 @@ namespace Player
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.tabPage1.Controls.Add(this.StockGridView);
-            this.tabPage1.Controls.Add(this.btnDeleteStock);
-            this.tabPage1.Controls.Add(this.btnSaveStock);
             this.tabPage1.Controls.Add(this.btnAddStock);
             this.tabPage1.Controls.Add(this.labelStockName);
             this.tabPage1.Controls.Add(this.txtStockName);
@@ -149,37 +141,12 @@ namespace Player
             this.StockGridView.TabIndex = 6;
             this.StockGridView.SelectionChanged += new System.EventHandler(this.StockGridView_SelectionChanged);
             // 
-            // btnDeleteStock
-            // 
-            this.btnDeleteStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDeleteStock.Location = new System.Drawing.Point(412, 114);
-            this.btnDeleteStock.Name = "btnDeleteStock";
-            this.btnDeleteStock.Size = new System.Drawing.Size(79, 41);
-            this.btnDeleteStock.TabIndex = 5;
-            this.btnDeleteStock.Text = "Delete";
-            this.btnDeleteStock.UseVisualStyleBackColor = true;
-            this.btnDeleteStock.Click += new System.EventHandler(this.btnDeleteStock_Click);
-            // 
-            // btnSaveStock
-            // 
-            this.btnSaveStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveStock.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSaveStock.Location = new System.Drawing.Point(412, 69);
-            this.btnSaveStock.Name = "btnSaveStock";
-            this.btnSaveStock.Size = new System.Drawing.Size(79, 39);
-            this.btnSaveStock.TabIndex = 4;
-            this.btnSaveStock.Text = "Save";
-            this.btnSaveStock.UseVisualStyleBackColor = true;
-            this.btnSaveStock.Click += new System.EventHandler(this.btnSaveStock_Click);
-            // 
             // btnAddStock
             // 
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddStock.Location = new System.Drawing.Point(412, 23);
+            this.btnAddStock.Location = new System.Drawing.Point(412, 59);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(79, 40);
             this.btnAddStock.TabIndex = 3;
@@ -209,8 +176,6 @@ namespace Player
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.tabPage2.Controls.Add(this.CategoryGridView);
-            this.tabPage2.Controls.Add(this.btnDeleteCategory);
-            this.tabPage2.Controls.Add(this.btnSaveCategory);
             this.tabPage2.Controls.Add(this.btnAddCategory);
             this.tabPage2.Controls.Add(this.labelCategoryName);
             this.tabPage2.Controls.Add(this.txtNameCategory);
@@ -268,37 +233,12 @@ namespace Player
             this.CategoryGridView.TabIndex = 14;
             this.CategoryGridView.SelectionChanged += new System.EventHandler(this.CategoryGridView_SelectionChanged);
             // 
-            // btnDeleteCategory
-            // 
-            this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCategory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCategory.Location = new System.Drawing.Point(417, 131);
-            this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(79, 33);
-            this.btnDeleteCategory.TabIndex = 11;
-            this.btnDeleteCategory.Text = "Delete";
-            this.btnDeleteCategory.UseVisualStyleBackColor = true;
-            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
-            // 
-            // btnSaveCategory
-            // 
-            this.btnSaveCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveCategory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSaveCategory.Location = new System.Drawing.Point(417, 79);
-            this.btnSaveCategory.Name = "btnSaveCategory";
-            this.btnSaveCategory.Size = new System.Drawing.Size(79, 34);
-            this.btnSaveCategory.TabIndex = 10;
-            this.btnSaveCategory.Text = "Save";
-            this.btnSaveCategory.UseVisualStyleBackColor = true;
-            this.btnSaveCategory.Click += new System.EventHandler(this.btnSaveCategory_Click);
-            // 
             // btnAddCategory
             // 
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddCategory.Location = new System.Drawing.Point(417, 28);
+            this.btnAddCategory.Location = new System.Drawing.Point(415, 58);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(79, 36);
             this.btnAddCategory.TabIndex = 9;
@@ -332,8 +272,6 @@ namespace Player
             this.tabPage3.Controls.Add(this.btnImportExportForm);
             this.tabPage3.Controls.Add(this.cmbCategory);
             this.tabPage3.Controls.Add(this.labelItemCategory);
-            this.tabPage3.Controls.Add(this.btnDeleteItem);
-            this.tabPage3.Controls.Add(this.btnSaveItem);
             this.tabPage3.Controls.Add(this.btnAddItem);
             this.tabPage3.Controls.Add(this.labelItemName);
             this.tabPage3.Controls.Add(this.txtItemName);
@@ -425,38 +363,12 @@ namespace Player
             this.labelItemCategory.TabIndex = 20;
             this.labelItemCategory.Text = "Category:";
             // 
-            // btnDeleteItem
-            // 
-            this.btnDeleteItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDeleteItem.Location = new System.Drawing.Point(404, 131);
-            this.btnDeleteItem.Name = "btnDeleteItem";
-            this.btnDeleteItem.Size = new System.Drawing.Size(79, 37);
-            this.btnDeleteItem.TabIndex = 19;
-            this.btnDeleteItem.Text = "Delete";
-            this.btnDeleteItem.UseVisualStyleBackColor = true;
-            this.btnDeleteItem.Click += new System.EventHandler(this.btnDeleteItem_Click);
-            // 
-            // btnSaveItem
-            // 
-            this.btnSaveItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSaveItem.Location = new System.Drawing.Point(300, 131);
-            this.btnSaveItem.Name = "btnSaveItem";
-            this.btnSaveItem.Size = new System.Drawing.Size(79, 37);
-            this.btnSaveItem.TabIndex = 18;
-            this.btnSaveItem.Text = "Save";
-            this.btnSaveItem.UseVisualStyleBackColor = true;
-            this.btnSaveItem.Click += new System.EventHandler(this.btnSaveItem_Click);
-            // 
             // btnAddItem
             // 
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddItem.Location = new System.Drawing.Point(191, 131);
+            this.btnAddItem.Location = new System.Drawing.Point(300, 130);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(79, 37);
             this.btnAddItem.TabIndex = 17;
@@ -515,20 +427,14 @@ namespace Player
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button btnDeleteStock;
-        private System.Windows.Forms.Button btnSaveStock;
         private System.Windows.Forms.Button btnAddStock;
         private System.Windows.Forms.Label labelStockName;
         private System.Windows.Forms.TextBox txtStockName;
-        private System.Windows.Forms.Button btnDeleteCategory;
-        private System.Windows.Forms.Button btnSaveCategory;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.Label labelCategoryName;
         private System.Windows.Forms.TextBox txtNameCategory;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Label labelItemCategory;
-        private System.Windows.Forms.Button btnDeleteItem;
-        private System.Windows.Forms.Button btnSaveItem;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label labelItemName;
         private System.Windows.Forms.TextBox txtItemName;

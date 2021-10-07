@@ -50,18 +50,6 @@ namespace Player
             StockGridView.DataSource = StockServices.GetStocks();
         }
 
-        private void btnSaveStock_Click(object sender, EventArgs e)
-        {
-            StockServices.EditStock(
-                (int)StockGridView.SelectedRows[0].Cells[0].Value, txtStockName.Text);
-            StockGridView.DataSource = StockServices.GetStocks();
-        }
-
-        private void btnDeleteStock_Click(object sender, EventArgs e)
-        {
-            StockServices.DeleteStock((int)StockGridView.SelectedRows[0].Cells[0].Value);
-            StockGridView.DataSource = StockServices.GetStocks();
-        }
 
         private void StockGridView_SelectionChanged(object sender, EventArgs e)
         {
@@ -75,21 +63,7 @@ namespace Player
         #endregion
 
         #region Category Tab
-        private void btnDeleteCategory_Click(object sender, EventArgs e)
-        {
-            int cat_id = (int)CategoryGridView.SelectedRows[0].Cells[0].Value;
-            CategoryServices.DeleteCategory(cat_id);
-            CategoryGridView.DataSource = CategoryServices.GetAllCategories();
-        }
-
-        private void btnSaveCategory_Click(object sender, EventArgs e)
-        {
-            int cat_id = (int)CategoryGridView.SelectedRows[0].Cells[0].Value;
-            string catName = txtNameCategory.Text;
-            CategoryServices.EditCategory(cat_id, catName);
-            CategoryGridView.DataSource = CategoryServices.GetAllCategories();
-        }
-
+    
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             CategoryServices.AddCategory(new Category()
@@ -97,6 +71,8 @@ namespace Player
                 Name = txtNameCategory.Text
             });
             CategoryGridView.DataSource = CategoryServices.GetAllCategories();
+            cmbCategory.DataSource = CategoryServices.GetAllCategories();
+
         }
 
         private void CategoryGridView_SelectionChanged(object sender, EventArgs e)
@@ -118,22 +94,7 @@ namespace Player
             }
         }
 
-        private void btnDeleteItem_Click(object sender, EventArgs e)
-        {
-            int item_id = (int)ItemGridView.SelectedRows[0].Cells[0].Value;
-            ItemServices.DeleteItem(item_id);
-            ItemGridView.DataSource = ItemServices.GetAllItemsByCatID((int?)cmbCategory.SelectedValue);
-        }
 
-        private void btnSaveItem_Click(object sender, EventArgs e)
-        {
-            int cat_id = (int)cmbCategory.SelectedValue;
-            int item_id = (int)ItemGridView.SelectedRows[0].Cells[0].Value;
-            string itemName = txtItemName.Text;
-            ItemServices.EditItem(item_id, cat_id);
-            ItemServices.EditItem(item_id, itemName);
-            ItemGridView.DataSource = ItemServices.GetAllItemsByCatID((int?)cmbCategory.SelectedValue);
-        }
 
         private void btnAddItem_Click(object sender, EventArgs e)
         {

@@ -42,8 +42,6 @@ namespace Player
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.ImportGridView = new System.Windows.Forms.DataGridView();
-            this.btnDeleteImport = new System.Windows.Forms.Button();
-            this.btnSaveImport = new System.Windows.Forms.Button();
             this.btnAddImport = new System.Windows.Forms.Button();
             this.dateOfImport = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,8 +57,6 @@ namespace Player
             this.quantity = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.ExportGridView = new System.Windows.Forms.DataGridView();
-            this.btnExportDelete = new System.Windows.Forms.Button();
-            this.btnExportSave = new System.Windows.Forms.Button();
             this.btnExportAdd = new System.Windows.Forms.Button();
             this.dateOfExport = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -109,8 +105,6 @@ namespace Player
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.tabPage1.Controls.Add(this.ImportGridView);
-            this.tabPage1.Controls.Add(this.btnDeleteImport);
-            this.tabPage1.Controls.Add(this.btnSaveImport);
             this.tabPage1.Controls.Add(this.btnAddImport);
             this.tabPage1.Controls.Add(this.dateOfImport);
             this.tabPage1.Controls.Add(this.label5);
@@ -178,37 +172,13 @@ namespace Player
             this.ImportGridView.TabIndex = 14;
             this.ImportGridView.SelectionChanged += new System.EventHandler(this.ImportGridView_SelectionChanged);
             // 
-            // btnDeleteImport
-            // 
-            this.btnDeleteImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnDeleteImport.Location = new System.Drawing.Point(924, 108);
-            this.btnDeleteImport.Name = "btnDeleteImport";
-            this.btnDeleteImport.Size = new System.Drawing.Size(87, 35);
-            this.btnDeleteImport.TabIndex = 13;
-            this.btnDeleteImport.Text = "Delete";
-            this.btnDeleteImport.UseVisualStyleBackColor = true;
-            this.btnDeleteImport.Click += new System.EventHandler(this.btnDeleteImport_Click);
-            // 
-            // btnSaveImport
-            // 
-            this.btnSaveImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnSaveImport.Location = new System.Drawing.Point(924, 60);
-            this.btnSaveImport.Name = "btnSaveImport";
-            this.btnSaveImport.Size = new System.Drawing.Size(87, 37);
-            this.btnSaveImport.TabIndex = 12;
-            this.btnSaveImport.Text = "Save";
-            this.btnSaveImport.UseVisualStyleBackColor = true;
-            this.btnSaveImport.Click += new System.EventHandler(this.btnSaveImport_Click);
-            // 
             // btnAddImport
             // 
             this.btnAddImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddImport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddImport.Location = new System.Drawing.Point(924, 15);
+            this.btnAddImport.Location = new System.Drawing.Point(924, 56);
             this.btnAddImport.Name = "btnAddImport";
-            this.btnAddImport.Size = new System.Drawing.Size(87, 36);
+            this.btnAddImport.Size = new System.Drawing.Size(87, 51);
             this.btnAddImport.TabIndex = 11;
             this.btnAddImport.Text = "Add";
             this.btnAddImport.UseVisualStyleBackColor = true;
@@ -331,8 +301,6 @@ namespace Player
             this.tabPage2.Controls.Add(this.quantity);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.ExportGridView);
-            this.tabPage2.Controls.Add(this.btnExportDelete);
-            this.tabPage2.Controls.Add(this.btnExportSave);
             this.tabPage2.Controls.Add(this.btnExportAdd);
             this.tabPage2.Controls.Add(this.dateOfExport);
             this.tabPage2.Controls.Add(this.label6);
@@ -430,40 +398,14 @@ namespace Player
             this.ExportGridView.TabIndex = 28;
             this.ExportGridView.SelectionChanged += new System.EventHandler(this.ExportGridView_SelectionChanged);
             // 
-            // btnExportDelete
-            // 
-            this.btnExportDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportDelete.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnExportDelete.Location = new System.Drawing.Point(961, 107);
-            this.btnExportDelete.Name = "btnExportDelete";
-            this.btnExportDelete.Size = new System.Drawing.Size(87, 33);
-            this.btnExportDelete.TabIndex = 27;
-            this.btnExportDelete.Text = "Delete";
-            this.btnExportDelete.UseVisualStyleBackColor = true;
-            this.btnExportDelete.Click += new System.EventHandler(this.btnExportDelete_Click);
-            // 
-            // btnExportSave
-            // 
-            this.btnExportSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportSave.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnExportSave.Location = new System.Drawing.Point(961, 63);
-            this.btnExportSave.Name = "btnExportSave";
-            this.btnExportSave.Size = new System.Drawing.Size(87, 38);
-            this.btnExportSave.TabIndex = 26;
-            this.btnExportSave.Text = "Save";
-            this.btnExportSave.UseVisualStyleBackColor = true;
-            this.btnExportSave.Click += new System.EventHandler(this.btnExportSave_Click);
-            // 
             // btnExportAdd
             // 
             this.btnExportAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExportAdd.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnExportAdd.Location = new System.Drawing.Point(961, 19);
+            this.btnExportAdd.Location = new System.Drawing.Point(962, 50);
             this.btnExportAdd.Name = "btnExportAdd";
-            this.btnExportAdd.Size = new System.Drawing.Size(87, 38);
+            this.btnExportAdd.Size = new System.Drawing.Size(87, 44);
             this.btnExportAdd.TabIndex = 25;
             this.btnExportAdd.Text = "Add";
             this.btnExportAdd.UseVisualStyleBackColor = true;
@@ -735,8 +677,6 @@ namespace Player
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbImportStock;
         private System.Windows.Forms.Label ImprtLabelStock;
-        private System.Windows.Forms.Button btnDeleteImport;
-        private System.Windows.Forms.Button btnSaveImport;
         private System.Windows.Forms.Button btnAddImport;
         private System.Windows.Forms.DateTimePicker dateOfImport;
         private System.Windows.Forms.Label label5;
@@ -744,8 +684,6 @@ namespace Player
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView ImportGridView;
         private System.Windows.Forms.DataGridView ExportGridView;
-        private System.Windows.Forms.Button btnExportDelete;
-        private System.Windows.Forms.Button btnExportSave;
         private System.Windows.Forms.Button btnExportAdd;
         private System.Windows.Forms.DateTimePicker dateOfExport;
         private System.Windows.Forms.Label label6;

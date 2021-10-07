@@ -7,13 +7,13 @@ namespace DBLayer.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class up : IMigrationMetadata
+    public sealed partial class create : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(up));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(create));
         
         string IMigrationMetadata.Id
         {
-            get { return "202110050328334_up"; }
+            get { return "202110072134326_create"; }
         }
         
         string IMigrationMetadata.Source
