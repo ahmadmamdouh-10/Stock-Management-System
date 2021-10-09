@@ -1,28 +1,18 @@
 ﻿using DBLayer;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLLayer
 {
     public class ItemInStockServices
     {
-        Context Context;
-        public ItemInStockServices()
+        private readonly Context Context;
+        public ItemInStockServices(Context Context)
         {
-            Context = new Context();
+            this.Context = Context;
         }
         public void AddItemInStock(ItemInStock itemInStock)
         {
             this.Context.ItemInStocks.Add(itemInStock);
-            this.Context.SaveChanges();
-        }
-        public void EditItemInStock(int iteminstock_id, int quantity, DateTime date)
-        {
-            this.Context.ItemInStocks.Where(it => it.ID == iteminstock_id).First().Quantity = quantity;
-            this.Context.ItemInStocks.Where(it => it.ID == iteminstock_id).First().Date = date;
             this.Context.SaveChanges();
         }
         public void DeleteItemInStock(int iteminstock_id)
@@ -31,43 +21,91 @@ namespace BLLayer
             this.Context.ItemInStocks.Remove(itemInStock);
             this.Context.SaveChanges();
         }
-        public int GetItemInStockID(int stock_id, int item_id)
+        public void ImportItem(ImportItem importItem)
         {
-            return this.Context.ItemInStocks.Where(it => it.Stock_ID == stock_id
-            && it.Item_ID == item_id
-            ).First().ID;
+            ItemInStock stockItem = Context.ItemInStocks.FirstOrDefault(s => s.Item_ID == importItem.Item_ID && s.Stock_ID == importItem.Stock_ID);
+            if (stockItem == null)
+            {
+                Context.ItemInStocks.Add(new ItemInStock
+                {
+                    Stock_ID = importItem.Stock_ID,
+                    Item_ID = importItem.Item_ID,
+                    OverAllQuantity = importItem.quantity
+                });
+
+            }
+            else
+            {
+                stockItem.OverAllQuantity += importItem.quantity;
+
+            }
+
+            Context.ImportItems.Add(importItem);
+            Context.SaveChanges();
+
+
         }
-        public dynamic GetAllItemInStock(int? stock_id, string status)
+        public void ExportItem(ExportItem exportItem)
         {
-            return (from s in this.Context.Stocks
-                    join ins in this.Context.ItemInStocks
-                    on s.ID equals ins.Stock_ID
-                    join i in this.Context.Items
-                    on ins.Item_ID equals i.ID
-                    join c in this.Context.Categories
-                    on i.Cat_ID equals c.ID
-                    where s.ID == stock_id && ins.Status == status
-                    select new
-                    {
-                        ID = ins.ID,
-                        Item_id = i.ID,
-                        Item = i.Name,
-                        Category = c.Name,
-                        Qunatity = ins.Quantity,
-                        Date = ins.Date
-                    }).ToList();
+
+            ItemInStock stockItem = Context.ItemInStocks.FirstOrDefault(s => s.Item_ID == exportItem.Item_ID && s.Stock_ID == exportItem.Stock_ID);
+
+            if (stockItem != null)
+            {
+                if (stockItem.OverAllQuantity >= exportItem.quantity)
+                {
+                    stockItem.OverAllQuantity -= exportItem.quantity;
+                    Context.ExportItems.Add(exportItem);
+                    Context.SaveChanges();
+                }
+
+            }
         }
-        public List<Item> GetAllItemInStock(int? stock_id)
+        public dynamic GetImportedItems(int stokID)
         {
-            return (from s in this.Context.Stocks
-                    join ins in this.Context.ItemInStocks
-                    on s.ID equals ins.Stock_ID
-                    join i in this.Context.Items
-                    on ins.Item_ID equals i.ID
-                    join c in this.Context.Categories
-                    on i.Cat_ID equals c.ID
-                    where s.ID == stock_id 
-                    select i).Distinct().ToList();
+            return Context.ImportItems.
+                 Where(I => I.Stock_ID == stokID).
+                 Select(I => new
+                 {
+                     ItemName = I.Item.Name,
+                     CategoryName = I.Item.Category.Name,
+                     Quantity = I.quantity,
+                     Date = I.Date
+                 }).OrderByDescending(I => I.Date).ToList();
+        }
+        public dynamic GetExportedItems(int stokID)
+        {
+            return Context.ExportItems.
+                 Where(E => E.Stock_ID == stokID).
+                 Select(E => new
+                 {
+                     ItemName = E.Item.Name,
+                     CategoryName = E.Item.Category.Name,
+                     Quantity = E.quantity,
+                     Date = E.Date
+                 }).OrderByDescending(I => I.Date).ToList();
+        }
+        public dynamic GetReportItems(int StotkID)
+        {
+            return Context.ItemInStocks.Where(I => I.Stock_ID == StotkID)
+                 .Select(I =>
+                   new
+                   {
+                       ItemName = I.Item.Name,
+                       Category = I.Item.Category.Name,
+                       overAllquantity = I.OverAllQuantity
+                   }
+                 ).ToList();
+        }
+        public int GetQuantity(int? item_id, int? stock_id)
+        {
+            var itemInStock = Context.ItemInStocks.FirstOrDefault(I => I.Stock_ID == stock_id && I.Item_ID == item_id);
+            if (itemInStock != null)
+            {
+                return itemInStock.OverAllQuantity;
+            }
+            return 0;
+
         }
     }
 }

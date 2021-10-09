@@ -1,24 +1,27 @@
 ﻿using DBLayer;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity.SqlServer;
 using System.Linq;
-/// <summary>
-/// test first push 
-/// </summary>
 namespace BLLayer
 {
     public class ItemServices
     {
-        Context Context;
-        public ItemServices()
+        private readonly Context Context;
+
+        public ItemServices(Context Context)
         {
-            Context = new Context();
+            this.Context = Context;
         }
-        public void AddItem(Item item)
+        public int AddItem(Item item)
         {
-            this.Context.Items.Add(item);
-            this.Context.SaveChanges();
+            Item Item = Context.Items.Where(I => I.Name == item.Name && I.Cat_ID == item.Cat_ID).FirstOrDefault();
+            if (Item == null)
+            {
+                this.Context.Items.Add(item);
+                return this.Context.SaveChanges();
+            }
+
+            return 0;
+
         }
         public void EditItem(int item_id, string name)
         {
@@ -38,20 +41,21 @@ namespace BLLayer
         }
         public List<Item> GetAllItemsByCatID(int? cat_id)
         {
-            return this.Context.Items.Where(i=>i.Cat_ID == cat_id).ToList();
+            return this.Context.Items.Where(i => i.Cat_ID == cat_id).ToList();
         }
-
         public int GetCatID(int item_id)
         {
             return this.Context.Items.Where(i => i.ID == item_id).First().Cat_ID;
         }
-        public int GetQuantity(int? item_id , int? stock_id)
+        public int GetQuantity(int? item_id, int? stock_id)
         {
-            if (item_id == null)
-                return 0;
-            int ImportQunatities = this.Context.ItemInStocks.Where(i => i.Item_ID == item_id && i.Status == "Import" && i.Stock_ID == stock_id).Select(i => i.Quantity).DefaultIfEmpty(0).Sum();
-            int ExprotQunatities = this.Context.ItemInStocks.Where(i => i.Item_ID == item_id && i.Status == "Export" && i.Stock_ID == stock_id).Select(i=>i.Quantity).DefaultIfEmpty(0).Sum();
-            return ImportQunatities - ExprotQunatities;
+            var itemInStock = Context.ItemInStocks.FirstOrDefault(I => I.Stock_ID == stock_id && I.Item_ID == item_id);
+            if (itemInStock != null)
+            {
+                return itemInStock.OverAllQuantity;
+            }
+            return 0;
+
         }
         public List<Item> GetAllItemsByCatIDandStockID(int? cat_id, int? stock_id)
         {

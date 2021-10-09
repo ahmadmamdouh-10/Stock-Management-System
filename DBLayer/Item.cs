@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DBLayer
 {
@@ -15,5 +11,7 @@ namespace DBLayer
         public int Cat_ID { get; set; }
         public virtual Category Category { get; set; }
         public virtual List<ItemInStock> ItemInStocks { get; set; }
+        public virtual List<ImportItem> ImportItems {get; set;}
+        public virtual List<ExportItem> ExportItems { get; set; }
     }
 }

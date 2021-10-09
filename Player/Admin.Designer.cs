@@ -76,9 +76,10 @@ namespace Player
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(531, 485);
+            this.tabControl1.Size = new System.Drawing.Size(676, 711);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -89,20 +90,22 @@ namespace Player
             this.tabPage1.Controls.Add(this.btnAddStock);
             this.tabPage1.Controls.Add(this.labelStockName);
             this.tabPage1.Controls.Add(this.txtStockName);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Location = new System.Drawing.Point(4, 37);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(523, 451);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(668, 670);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Stock";
+            this.tabPage1.Text = "ADD Stock";
             // 
             // btnImportExportForm3
             // 
             this.btnImportExportForm3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportExportForm3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnImportExportForm3.Location = new System.Drawing.Point(112, 394);
+            this.btnImportExportForm3.Location = new System.Drawing.Point(183, 585);
+            this.btnImportExportForm3.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportExportForm3.Name = "btnImportExportForm3";
-            this.btnImportExportForm3.Size = new System.Drawing.Size(207, 40);
+            this.btnImportExportForm3.Size = new System.Drawing.Size(276, 49);
             this.btnImportExportForm3.TabIndex = 23;
             this.btnImportExportForm3.Text = "Import / Export";
             this.btnImportExportForm3.UseVisualStyleBackColor = true;
@@ -134,7 +137,8 @@ namespace Player
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.StockGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.StockGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.StockGridView.Location = new System.Drawing.Point(77, 94);
+            this.StockGridView.Location = new System.Drawing.Point(157, 206);
+            this.StockGridView.Margin = new System.Windows.Forms.Padding(4);
             this.StockGridView.MultiSelect = false;
             this.StockGridView.Name = "StockGridView";
             this.StockGridView.ReadOnly = true;
@@ -147,23 +151,24 @@ namespace Player
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.StockGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.StockGridView.RowHeadersVisible = false;
+            this.StockGridView.RowHeadersWidth = 51;
             this.StockGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.StockGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.StockGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.StockGridView.ShowCellToolTips = false;
             this.StockGridView.ShowEditingIcon = false;
-            this.StockGridView.Size = new System.Drawing.Size(288, 281);
+            this.StockGridView.Size = new System.Drawing.Size(384, 346);
             this.StockGridView.TabIndex = 6;
-            this.StockGridView.SelectionChanged += new System.EventHandler(this.StockGridView_SelectionChanged);
             // 
             // btnAddStock
             // 
             this.btnAddStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStock.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddStock.Location = new System.Drawing.Point(412, 31);
+            this.btnAddStock.Location = new System.Drawing.Point(285, 137);
+            this.btnAddStock.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddStock.Name = "btnAddStock";
-            this.btnAddStock.Size = new System.Drawing.Size(79, 40);
+            this.btnAddStock.Size = new System.Drawing.Size(105, 49);
             this.btnAddStock.TabIndex = 3;
             this.btnAddStock.Text = "Add";
             this.btnAddStock.UseVisualStyleBackColor = true;
@@ -173,18 +178,20 @@ namespace Player
             // 
             this.labelStockName.AutoSize = true;
             this.labelStockName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(255)))));
-            this.labelStockName.Location = new System.Drawing.Point(8, 38);
+            this.labelStockName.Location = new System.Drawing.Point(267, 31);
+            this.labelStockName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStockName.Name = "labelStockName";
-            this.labelStockName.Size = new System.Drawing.Size(64, 21);
+            this.labelStockName.Size = new System.Drawing.Size(131, 28);
             this.labelStockName.TabIndex = 1;
-            this.labelStockName.Text = "Name :";
+            this.labelStockName.Text = "Stock Name ";
             // 
             // txtStockName
             // 
             this.txtStockName.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtStockName.Location = new System.Drawing.Point(79, 38);
+            this.txtStockName.Location = new System.Drawing.Point(158, 78);
+            this.txtStockName.Margin = new System.Windows.Forms.Padding(4);
             this.txtStockName.Name = "txtStockName";
-            this.txtStockName.Size = new System.Drawing.Size(288, 29);
+            this.txtStockName.Size = new System.Drawing.Size(383, 34);
             this.txtStockName.TabIndex = 0;
             // 
             // tabPage2
@@ -196,20 +203,22 @@ namespace Player
             this.tabPage2.Controls.Add(this.labelCategoryName);
             this.tabPage2.Controls.Add(this.txtNameCategory);
             this.tabPage2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Location = new System.Drawing.Point(4, 37);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(523, 451);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(668, 670);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Category";
+            this.tabPage2.Text = "ADD Category";
             // 
             // btnImportExportForm2
             // 
             this.btnImportExportForm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportExportForm2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnImportExportForm2.Location = new System.Drawing.Point(120, 403);
+            this.btnImportExportForm2.Location = new System.Drawing.Point(179, 590);
+            this.btnImportExportForm2.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportExportForm2.Name = "btnImportExportForm2";
-            this.btnImportExportForm2.Size = new System.Drawing.Size(207, 40);
+            this.btnImportExportForm2.Size = new System.Drawing.Size(276, 49);
             this.btnImportExportForm2.TabIndex = 23;
             this.btnImportExportForm2.Text = "Import / Export";
             this.btnImportExportForm2.UseVisualStyleBackColor = true;
@@ -239,7 +248,8 @@ namespace Player
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.CategoryGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.CategoryGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CategoryGridView.Location = new System.Drawing.Point(74, 85);
+            this.CategoryGridView.Location = new System.Drawing.Point(135, 198);
+            this.CategoryGridView.Margin = new System.Windows.Forms.Padding(4);
             this.CategoryGridView.MultiSelect = false;
             this.CategoryGridView.Name = "CategoryGridView";
             this.CategoryGridView.ReadOnly = true;
@@ -252,23 +262,24 @@ namespace Player
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.CategoryGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.CategoryGridView.RowHeadersVisible = false;
+            this.CategoryGridView.RowHeadersWidth = 51;
             this.CategoryGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.CategoryGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CategoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.CategoryGridView.ShowCellToolTips = false;
             this.CategoryGridView.ShowEditingIcon = false;
-            this.CategoryGridView.Size = new System.Drawing.Size(311, 298);
+            this.CategoryGridView.Size = new System.Drawing.Size(415, 367);
             this.CategoryGridView.TabIndex = 14;
-            this.CategoryGridView.SelectionChanged += new System.EventHandler(this.CategoryGridView_SelectionChanged);
             // 
             // btnAddCategory
             // 
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddCategory.Location = new System.Drawing.Point(412, 33);
+            this.btnAddCategory.Location = new System.Drawing.Point(276, 127);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(79, 36);
+            this.btnAddCategory.Size = new System.Drawing.Size(105, 44);
             this.btnAddCategory.TabIndex = 9;
             this.btnAddCategory.Text = "Add";
             this.btnAddCategory.UseVisualStyleBackColor = true;
@@ -279,18 +290,20 @@ namespace Player
             this.labelCategoryName.AutoSize = true;
             this.labelCategoryName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
             this.labelCategoryName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(255)))));
-            this.labelCategoryName.Location = new System.Drawing.Point(6, 33);
+            this.labelCategoryName.Location = new System.Drawing.Point(240, 30);
+            this.labelCategoryName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCategoryName.Name = "labelCategoryName";
-            this.labelCategoryName.Size = new System.Drawing.Size(60, 21);
+            this.labelCategoryName.Size = new System.Drawing.Size(160, 28);
             this.labelCategoryName.TabIndex = 7;
-            this.labelCategoryName.Text = "Name:";
+            this.labelCategoryName.Text = "Category Name";
             // 
             // txtNameCategory
             // 
             this.txtNameCategory.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtNameCategory.Location = new System.Drawing.Point(74, 33);
+            this.txtNameCategory.Location = new System.Drawing.Point(135, 73);
+            this.txtNameCategory.Margin = new System.Windows.Forms.Padding(4);
             this.txtNameCategory.Name = "txtNameCategory";
-            this.txtNameCategory.Size = new System.Drawing.Size(311, 29);
+            this.txtNameCategory.Size = new System.Drawing.Size(413, 34);
             this.txtNameCategory.TabIndex = 6;
             // 
             // tabPage3
@@ -303,12 +316,13 @@ namespace Player
             this.tabPage3.Controls.Add(this.btnAddItem);
             this.tabPage3.Controls.Add(this.labelItemName);
             this.tabPage3.Controls.Add(this.txtItemName);
-            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Location = new System.Drawing.Point(4, 37);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(523, 451);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(668, 670);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Item";
+            this.tabPage3.Text = "ADD Item";
             // 
             // ItemGridView
             // 
@@ -334,7 +348,8 @@ namespace Player
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.ItemGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.ItemGridView.GridColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ItemGridView.Location = new System.Drawing.Point(64, 184);
+            this.ItemGridView.Location = new System.Drawing.Point(52, 297);
+            this.ItemGridView.Margin = new System.Windows.Forms.Padding(4);
             this.ItemGridView.MultiSelect = false;
             this.ItemGridView.Name = "ItemGridView";
             this.ItemGridView.ReadOnly = true;
@@ -347,22 +362,23 @@ namespace Player
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.ItemGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.ItemGridView.RowHeadersVisible = false;
+            this.ItemGridView.RowHeadersWidth = 51;
             this.ItemGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ItemGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.ItemGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ItemGridView.ShowCellToolTips = false;
             this.ItemGridView.ShowEditingIcon = false;
-            this.ItemGridView.Size = new System.Drawing.Size(419, 214);
+            this.ItemGridView.Size = new System.Drawing.Size(559, 263);
             this.ItemGridView.TabIndex = 23;
-            this.ItemGridView.SelectionChanged += new System.EventHandler(this.ItemGridView_SelectionChanged);
             // 
             // btnImportExportForm
             // 
             this.btnImportExportForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportExportForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnImportExportForm.Location = new System.Drawing.Point(172, 404);
+            this.btnImportExportForm.Location = new System.Drawing.Point(195, 582);
+            this.btnImportExportForm.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportExportForm.Name = "btnImportExportForm";
-            this.btnImportExportForm.Size = new System.Drawing.Size(207, 40);
+            this.btnImportExportForm.Size = new System.Drawing.Size(276, 49);
             this.btnImportExportForm.TabIndex = 22;
             this.btnImportExportForm.Text = "Import / Export";
             this.btnImportExportForm.UseVisualStyleBackColor = true;
@@ -373,11 +389,12 @@ namespace Player
             this.cmbCategory.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCategory.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.cmbCategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(191, 84);
+            this.cmbCategory.Location = new System.Drawing.Point(112, 165);
+            this.cmbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(292, 29);
+            this.cmbCategory.Size = new System.Drawing.Size(388, 36);
             this.cmbCategory.TabIndex = 21;
             this.cmbCategory.SelectedValueChanged += new System.EventHandler(this.cmbCategory_SelectedValueChanged);
             // 
@@ -385,20 +402,22 @@ namespace Player
             // 
             this.labelItemCategory.AutoSize = true;
             this.labelItemCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(255)))));
-            this.labelItemCategory.Location = new System.Drawing.Point(60, 87);
+            this.labelItemCategory.Location = new System.Drawing.Point(223, 123);
+            this.labelItemCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelItemCategory.Name = "labelItemCategory";
-            this.labelItemCategory.Size = new System.Drawing.Size(84, 21);
+            this.labelItemCategory.Size = new System.Drawing.Size(161, 28);
             this.labelItemCategory.TabIndex = 20;
-            this.labelItemCategory.Text = "Category:";
+            this.labelItemCategory.Text = "Select Category";
             // 
             // btnAddItem
             // 
             this.btnAddItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddItem.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnAddItem.Location = new System.Drawing.Point(300, 130);
+            this.btnAddItem.Location = new System.Drawing.Point(255, 227);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(79, 37);
+            this.btnAddItem.Size = new System.Drawing.Size(105, 46);
             this.btnAddItem.TabIndex = 17;
             this.btnAddItem.Text = "Add";
             this.btnAddItem.UseVisualStyleBackColor = true;
@@ -408,28 +427,31 @@ namespace Player
             // 
             this.labelItemName.AutoSize = true;
             this.labelItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(255)))));
-            this.labelItemName.Location = new System.Drawing.Point(60, 49);
+            this.labelItemName.Location = new System.Drawing.Point(243, 28);
+            this.labelItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelItemName.Name = "labelItemName";
-            this.labelItemName.Size = new System.Drawing.Size(60, 21);
+            this.labelItemName.Size = new System.Drawing.Size(117, 28);
             this.labelItemName.TabIndex = 15;
-            this.labelItemName.Text = "Name:";
+            this.labelItemName.Text = "Item Name";
             // 
             // txtItemName
             // 
             this.txtItemName.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtItemName.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(191, 46);
+            this.txtItemName.Location = new System.Drawing.Point(112, 73);
+            this.txtItemName.Margin = new System.Windows.Forms.Padding(4);
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(293, 29);
+            this.txtItemName.Size = new System.Drawing.Size(389, 34);
             this.txtItemName.TabIndex = 14;
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(531, 485);
+            this.ClientSize = new System.Drawing.Size(676, 711);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Admin";

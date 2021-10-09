@@ -1,32 +1,37 @@
 ﻿using DBLayer;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLLayer
 {
     public class StockServices
     {
-        Context Context;
-        public StockServices()
+        private readonly Context Context;
+
+        public StockServices(Context Context)
         {
-            Context = new Context();
+            this.Context = Context;
         }
-        public void AddStock(Stock stock)
+        public int AddStock(Stock stock)
         {
-            this.Context.Stocks.Add(stock);
-            this.Context.SaveChanges();
+            Stock Stock = Context.Stocks.Where(s => s.Name == stock.Name).FirstOrDefault();
+            if (Stock == null)
+            {
+                this.Context.Stocks.Add(stock);
+                return this.Context.SaveChanges();
+            }
+
+            return 0;
+
         }
-        public void EditStock(int stock_id,string name)
+        public void EditStock(int stock_id, string name)
         {
-            this.Context.Stocks.Where(s=>s.ID == stock_id).First().Name = name;
+            this.Context.Stocks.Where(s => s.ID == stock_id).First().Name = name;
             this.Context.SaveChanges();
         }
         public void DeleteStock(int stock_id)
         {
-            Stock stock = this.Context.Stocks.Where(s=>s.ID == stock_id).First();
+            Stock stock = this.Context.Stocks.Where(s => s.ID == stock_id).First();
             this.Context.Stocks.Remove(stock);
             this.Context.SaveChanges();
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DBLayer
 {
@@ -14,9 +9,7 @@ namespace DBLayer
         public int? Item_ID { get; set; }
         [ForeignKey("Stock")]
         public int? Stock_ID { get; set; }
-        public DateTime Date { get; set; }
-        public int Quantity { get; set; }
-        public string Status { get; set; } // import or export
+        public int OverAllQuantity { get; set; }
         public virtual Item Item  { get; set; }
         public virtual Stock Stock { get; set; }
     }

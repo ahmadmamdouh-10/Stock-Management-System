@@ -12,6 +12,10 @@ namespace DBLayer
         public string Name { get; set; }
 
         public virtual List<ItemInStock> ItemInStocks { get; set; }
+        public virtual List<ImportItem> ImportItems { get; set; }
+        public virtual List<ExportItem> ExportItems { get; set; }
+
+
 
     }
 }

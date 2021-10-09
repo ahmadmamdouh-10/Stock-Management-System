@@ -53,11 +53,13 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="ExportItem.cs" />
+    <Compile Include="ImportItem.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemInStock.cs" />
-    <Compile Include="Migrations\202110072134326_create.cs" />
-    <Compile Include="Migrations\202110072134326_create.designer.cs">
-      <DependentUpon>202110072134326_create.cs</DependentUpon>
+    <Compile Include="Migrations\202110080936021_createdatabase.cs" />
+    <Compile Include="Migrations\202110080936021_createdatabase.designer.cs">
+      <DependentUpon>202110080936021_createdatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Stock.cs" />
@@ -68,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202110072134326_create.resx">
-      <DependentUpon>202110072134326_create.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202110080936021_createdatabase.resx">
+      <DependentUpon>202110080936021_createdatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

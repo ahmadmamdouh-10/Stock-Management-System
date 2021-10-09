@@ -9,7 +9,7 @@ namespace DBLayer
 {
     public class Context:DbContext
     {
-        public Context():base("Data Source=.;Initial Catalog=DB_Stock_Managment;Integrated Security=True")
+        public Context():base("Data Source=.;Initial Catalog=DB_Stock_Managment2;Integrated Security=True")
         {
 
         }
@@ -17,6 +17,8 @@ namespace DBLayer
         public DbSet<Category> Categories{ get; set; } 
         public DbSet<Item> Items{ get; set; }
         public DbSet<ItemInStock> ItemInStocks{ get; set; }
+        public DbSet<ImportItem> ImportItems { get; set; }
+        public DbSet<ExportItem> ExportItems { get; set; }
         
     }
 }

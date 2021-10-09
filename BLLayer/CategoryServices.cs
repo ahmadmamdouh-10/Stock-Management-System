@@ -1,27 +1,31 @@
 ﻿using DBLayer;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLLayer
 {
     public class CategoryServices
     {
-        Context Context;
-        public CategoryServices()
+        private readonly Context Context;
+
+        public CategoryServices(Context Context)
         {
-            Context = new Context();
+            this.Context = Context;
         }
         public List<Category> GetAllCategories()
         {
             return this.Context.Categories.ToList();
         }
-        public void AddCategory(Category category)
+        public int AddCategory(Category category)
         {
-            this.Context.Categories.Add(category);
-            this.Context.SaveChanges();
+            Category Category = Context.Categories.Where(C => C.Name == category.Name).FirstOrDefault();
+            if(Category==null)
+            {
+                this.Context.Categories.Add(category);
+                return this.Context.SaveChanges();
+            }
+            return 0;
+          
         }
         public void EditCategory(int cat_id, string name)
         {
@@ -34,18 +38,9 @@ namespace BLLayer
             this.Context.Categories.Remove(category);
             this.Context.SaveChanges();
         }
-
-        public List<Category> GetAllCatByStockID(int? stock_id , string status)
+        public List<Category> GetAllCatByStockID(int? stock_id)
         {
-            return (from s in Context.Stocks
-                    join ins in this.Context.ItemInStocks
-                    on s.ID equals ins.Stock_ID
-                    join i in Context.Items
-                    on ins.Item_ID equals i.ID
-                    join c in Context.Categories
-                    on i.Cat_ID equals c.ID
-                    where s.ID == stock_id && ins.Status==status
-                    select c).ToList();
+           return Context.ItemInStocks.Where(In => In.Stock_ID == stock_id).Select(In => In.Item.Category).ToList();
         }
     }
 }
